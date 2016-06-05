@@ -1,0 +1,2 @@
+C:\Users\sneha\Documents\Visual Studio 2015\Projects\NewProject\NewProject\NewProject.WinPhone\NewProject.WinPhone.csproj;neutral
+C:\Users\sneha\Documents\Visual Studio 2015\Projects\NewProject\NewProject\NewProject\NewProject.csproj;neutral

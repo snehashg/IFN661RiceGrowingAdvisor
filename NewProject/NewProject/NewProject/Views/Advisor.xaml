@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewProject.Views.Advisor" Title ="Rice Growing Advisor" BackgroundImage="icon.png">
+  <ContentPage.Content>
+
+    <StackLayout Orientation="Vertical">
+      <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+        <Button Image="home.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon1"/>
+        <Button Image="msg.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon2"/>
+        <Button Image="notification.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon3"/>
+
+
+      </StackLayout>
+    <ListView x:Name="WaterQualityList" RowHeight ="400" ItemsSource ="{Binding AdviosrDetail}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout>
+              <Label Text ="Water Quality" FontSize="20" TextColor="Black" FontAttributes="Bold"/>
+              <Frame OutlineColor="Red" BackgroundColor="Black">
+                <StackLayout Orientation ="Vertical">
+                  <Label Text ="{Binding ContentNI, StringFormat ='Content of Nitrogen : {0}mg/L'}" FontSize="20" TextColor="White"/>
+                  <Label Text ="{Binding ContentMO, StringFormat ='Content of Magnessium : {0}mg/L'}" FontSize="20" TextColor="White"/>
+                  <Label Text ="{Binding ContentPH, StringFormat ='PH Level : {0}'}" FontSize="20" TextColor="White"/>
+                </StackLayout>
+              </Frame>
+              <Label Text ="Soil Quatliy" FontSize="20" TextColor="Black" FontAttributes="Bold"/>
+              <Frame OutlineColor="Red" BackgroundColor="Black">
+                <StackLayout Orientation="Vertical">
+                  <Label Text ="{Binding NValue, StringFormat ='Nitrogen： {0}%'}" FontSize="20" TextColor="White"/>
+
+                  <Label Text ="{Binding PValue, StringFormat = 'Phosphorous: {0}%'}" FontSize="20" TextColor="White"/>
+
+                  <Label Text ="{Binding KValue,StringFormat = 'Potassium: {0}%'}" FontSize="20" TextColor="White"/>
+                </StackLayout>
+              </Frame>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <StackLayout>
+      <Button
+				Text="Give a Suggestion"
+				BorderWidth="1"
+				VerticalOptions="Center"
+				Clicked="OnButtonClicked" />
+    </StackLayout>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

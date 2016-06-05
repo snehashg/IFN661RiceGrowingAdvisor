@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewProject.Views.Notification" BackgroundImage="icon.png">
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <StackLayout Orientation="Vertical">
+  <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+    <Button Image="home.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon1"/>
+  </StackLayout>
+  <StackLayout>
+    <Label Text=" The Suggestions provided are displayed here on this page" TextColor="Black" FontSize="26"/>
+  </StackLayout>
+  </StackLayout>
+</ContentPage>

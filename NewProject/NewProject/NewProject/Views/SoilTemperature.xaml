@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewProject.Views.SoilTemperature" Title ="Soil Temperature" BackgroundImage="icon.png">
+  <ContentPage.Content>
+    <StackLayout Orientation="Vertical">
+      <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+        <Button Image="home.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon1"/>
+        <Button Image="msg.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon2"/>
+        <Button Image="notification.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon3"/>
+
+
+      </StackLayout>
+      <ListView x:Name="SoilTempList" RowHeight="400" ItemsSource ="{Binding SoilTempDetail}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+
+
+              <StackLayout   Orientation="Vertical">
+
+                <Label Text ="Soil Temperature" FontSize="20" TextColor="Black" FontAttributes="Bold"/>
+
+                <Frame OutlineColor="Red" BackgroundColor="Black">
+
+                  <StackLayout Orientation="Vertical">
+                    <Label Text ="{Binding CurrentTemperature, StringFormat = 'Current temperature: {0}C'}" FontSize="20" TextColor="White"/>
+
+                    <Label Text="Required Temperature Range:" FontSize="22" TextColor="White" FontAttributes="Italic"/>
+                    <Label Text ="{Binding MinTemperature, StringFormat = 'Minimum Temperature: {0}C'}" FontSize="20" TextColor="White"/>
+
+                    <Label Text ="{Binding MaxTemperature, StringFormat = 'Maximum Temperature: {0}C'}" FontSize="20" TextColor="White"/>
+
+
+                  </StackLayout>
+
+                </Frame>
+                <Label VerticalOptions="Center" Text="Suggestions" FontSize="20" TextColor="Black" FontAttributes="Bold"/>
+                <Frame OutlineColor="Red" BackgroundColor="Black">
+                  <StackLayout Orientation="Vertical">
+                    <Label Text ="{Binding Suggestion1, StringFormat = 'System Suggestion: {0}'}" FontSize="16" TextColor="White"/>
+
+                    <Label Text ="{Binding Suggestion2, StringFormat = 'Agriculture Advisor Suggestion: {0}'}" FontSize="16" TextColor="White"/>
+
+
+                  </StackLayout>
+                </Frame>
+              </StackLayout>
+
+            </ViewCell>
+
+
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewProject.Views.MainPage"
+  Title="{Binding PageTitle}" 
+   BackgroundImage="icon.png"      >
+
+
+  <Grid>
+
+    <Label Text="{Binding PageTitle}"
+           FontSize="24"
+           FontAttributes="Bold"
+           VerticalOptions="Start"
+           BackgroundColor="Black" />
+
+
+
+    <Button Text="Farmer"
+            BackgroundColor="Black"
+            TextColor="White"
+        HorizontalOptions="Start"
+            VerticalOptions="CenterAndExpand"
+  Clicked="OnButtonClick1"/>
+
+    <Button Text="Advisors"
+            BackgroundColor="Black"
+            TextColor="White"
+        HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand"
+      Clicked="OnButtonClick2"/>
+
+    <Button Text="Supplier"
+            BackgroundColor="Black"
+            TextColor="White"
+        HorizontalOptions="End"
+            VerticalOptions="CenterAndExpand"
+    Clicked="OnButtonClick3"/>
+  </Grid>
+  
+</ContentPage>

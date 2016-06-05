@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewProject.Views.Humidity" Title ="Humidity of Air" BackgroundImage="icon.png">
+  <ContentPage.Content>
+    <StackLayout Orientation="Vertical">
+      <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+        <Button Image="home.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon1"/>
+        <Button Image="msg.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon2"/>
+        <Button Image="notification.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon3"/>
+
+      </StackLayout>
+      <ListView x:Name="HumidityList" RowHeight="350" ItemsSource ="{Binding HumDetail}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+
+
+              <StackLayout   Orientation="Vertical">
+
+                <Label Text ="Humidity of Air" FontSize="20" TextColor="Black" FontAttributes="Bold"/>
+
+                <Frame OutlineColor="Red" BackgroundColor="Black">
+
+                  <StackLayout Orientation="Vertical">
+                    <Label Text ="{Binding PerciValue, StringFormat ='Percipitation： {0}%'}" FontSize="20" TextColor="White"/>
+
+                    <Label Text ="{Binding HumValue, StringFormat = 'Humidity: {0}%'}" FontSize="20" TextColor="White"/>
+
+                    <Label Text ="{Binding WindValue,StringFormat = 'Wind: {0}km/h'}" FontSize="20" TextColor="White"/>
+
+
+                  </StackLayout>
+
+                </Frame>
+                <Label VerticalOptions="Center" Text="Suggestions" FontSize="20" TextColor="Black" FontAttributes="Bold"/>
+                <Frame OutlineColor="Red" BackgroundColor="Black">
+                  <StackLayout Orientation="Vertical">
+                    <Label Text = "{Binding Suggestion, StringFormat ='{0}'}" FontSize="20"/>
+                   
+
+
+
+                  </StackLayout>
+                </Frame>
+              </StackLayout>
+
+            </ViewCell>
+
+
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

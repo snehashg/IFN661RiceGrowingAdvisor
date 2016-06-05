@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage	xmlns="http://xamarin.com/schemas/2014/forms"
+				xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+				x:Class="NewProject.Views.Pesticide"
+				Title="Rice Growing Advisor" BackgroundImage="icon.png">
+
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+					iOS="0, 10, 0, 0" />
+  </ContentPage.Padding>
+  <StackLayout Orientation="Vertical">
+    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+      <Button Image="home.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon1"/>
+      <Button Image="msg.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon2"/>
+      <Button Image="notification.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon3"/>
+
+
+    </StackLayout>
+    
+    <ListView x:Name="pesticide" RowHeight="600" ItemsSource="{Binding PesticideDetail}" >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout>
+              <Label	VerticalOptions="Center"
+									Text="Views of Crop" TextColor="Black" FontSize="20" FontAttributes="Bold" />
+              <Image x:Name ="PesticideIMA" Source="{Binding PDIMG}" WidthRequest="150" HeightRequest="200" ></Image>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <StackLayout>
+      <Button
+				Text="Give a Suggestion"
+				BorderWidth="1"
+				VerticalOptions="Center"
+				Clicked="OnButtonClicked" />
+    </StackLayout>
+  </StackLayout>
+
+</ContentPage>

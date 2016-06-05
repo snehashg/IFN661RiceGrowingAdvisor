@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewProject.Views.NPK" Title ="NPK" BackgroundImage="icon.png">
+  <ContentPage.Content>
+    <StackLayout Orientation="Vertical">
+      <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+        <Button Image="home.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon1"/>
+        <Button Image="msg.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon2"/>
+        <Button Image="notification.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon3"/>
+
+
+      </StackLayout>
+      <ListView x:Name="NPKList" RowHeight="350" ItemsSource ="{Binding NPKDetail}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+
+
+              <StackLayout   Orientation="Vertical">
+
+                <Label Text ="{Binding NpkTitle, StringFormat ='{0}' }" FontSize="20" TextColor="Black" FontAttributes="Bold"/>
+
+                <Frame OutlineColor="Red" BackgroundColor="Black">
+
+                  <StackLayout Orientation="Vertical">
+                    <Label Text ="{Binding NValue, StringFormat ='Nitrogen： {0}%'}" FontSize="20" TextColor="White"/>
+
+                    <Label Text ="{Binding PValue, StringFormat = 'Phosphorous: {0}%'}" FontSize="20" TextColor="White"/>
+
+                    <Label Text ="{Binding KValue,StringFormat = 'Potassium: {0}%'}" FontSize="20" TextColor="White"/>
+
+
+                  </StackLayout>
+
+                </Frame>
+                <Label VerticalOptions="Center" Text="Required Fertilizers" FontSize="20" TextColor="Black" FontAttributes="Bold"/>
+                <Frame OutlineColor="Red" BackgroundColor="Black">
+                  <StackLayout Orientation="Vertical">
+                    <Label Text ="{Binding fertilizer1, StringFormat = 'Urea: {0}kg'}" FontSize="20" TextColor="White"/>
+
+                    <Label Text ="{Binding fertilizer2, StringFormat = 'Ammonium Nitrate: {0}kg'}" FontSize="20" TextColor="White"/>
+
+                    <Label Text ="{Binding fertilizer3, StringFormat = 'Ammonium Sulphate: {0}kg'}" FontSize="20" TextColor="White"/>
+
+                  </StackLayout>
+                </Frame>
+              </StackLayout>
+
+            </ViewCell>
+
+
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

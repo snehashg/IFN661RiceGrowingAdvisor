@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewProject.Views.Waterquality" Title ="Rice Growing Advisor" BackgroundImage="icon.png">
+  <ContentPage.Content>
+    <StackLayout Orientation="Vertical">
+      <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+        <Button Image="home.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon1"/>
+        <Button Image="msg.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon2"/>
+        <Button Image="notification.png" WidthRequest="30" HeightRequest="35" Clicked="Onclickedicon3"/>
+
+
+      </StackLayout>
+      <ListView x:Name="WaterquList" RowHeight ="600" ItemsSource ="{Binding WaterquDetail}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout>
+                <Label Text ="Water Quality(Standard)" FontSize="20" TextColor="Black" FontAttributes="Bold"/>
+                <Frame OutlineColor="Red" BackgroundColor="Black">
+                  <StackLayout Orientation ="Vertical">
+                    <Label Text ="{Binding SContentNI, StringFormat ='Content of Nitrogen : {0}mg/L'}" FontSize="20" TextColor="White"/>
+                    <Label Text ="{Binding SContentMO, StringFormat ='Content of Magnessium : {0}mg/L'}" FontSize="20" TextColor="White"/>
+                    <Label Text ="{Binding SContentPH, StringFormat ='PH Level : {0}'}" FontSize="20" TextColor="White"/>
+                  </StackLayout>
+                </Frame>
+                <Label Text ="Water Quality(Current)" FontSize="20" TextColor="Black" FontAttributes="Bold"/>
+                <Frame OutlineColor="Red" BackgroundColor="Black">
+                  <StackLayout Orientation ="Vertical">
+                    <Label Text ="{Binding ContentNI, StringFormat ='Content of Nitrogen : {0}mg/L'}" FontSize="20" TextColor="White"/>
+                    <Label Text ="{Binding ContentMO, StringFormat ='Content of Magnessium : {0}mg/L'}" FontSize="20" TextColor="White"/>
+                    <Label Text ="{Binding ContentPH, StringFormat ='PH Level : {0}'}" FontSize="20" TextColor="White"/>
+                  </StackLayout>
+                </Frame>
+                <Label Text ="Suggestion" FontSize="20" TextColor="Black" FontAttributes="Bold"/>
+                <Frame OutlineColor="Red" BackgroundColor="Black">
+                  <StackLayout Orientation="Vertical">
+                    <Label Text ="{Binding Suggestion4, StringFormat ='{0}'}" FontSize="20" TextColor="White"/>
+                  </StackLayout>
+                </Frame>
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

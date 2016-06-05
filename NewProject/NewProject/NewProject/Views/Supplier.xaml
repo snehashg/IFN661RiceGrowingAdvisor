@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewProject.Views.Supplier"
+  Title="{Binding PageTitle}"
+   BackgroundImage="icon.png"      >
+
+
+  <Grid>
+
+    <Label Text="Supplier"
+           FontSize="24"
+           FontAttributes="Bold"
+           VerticalOptions="Start"
+           BackgroundColor="Black" />
+
+
+
+    <Button Text="Fertilizer Supplier"
+            BackgroundColor="Black"
+            TextColor="White"
+        HorizontalOptions="Start"
+            VerticalOptions="CenterAndExpand"
+  Clicked="OnButtonClick4"/>
+
+    <Button Text="Pesticide Supplier"
+            BackgroundColor="Black"
+            TextColor="White"
+        HorizontalOptions="End"
+            VerticalOptions="CenterAndExpand"
+      Clicked="OnButtonClick5"/>
+
+   
+  </Grid>
+
+</ContentPage>
